@@ -1,0 +1,19 @@
+<div class='container'>
+  <h1>New Game</h1>
+  <div>
+    <ul>
+      <% @letters.each do |letter| %>
+        <li><%= letter.upcase %></li>
+      <% end %>
+    </ul>
+  </div>
+  <form action="/score" method='post'>
+    <div class="mb-1">
+      <label for="answer" class="form-label">Create your word!</label>
+    </div>
+    <div class="mb-3">
+      <input type="text" name="answer" value="<%= params[:answer] %>" placeholder="Type here.." class="rounded">
+      <input type="submit" value="Submit!" class="btn btn-primary">
+    </div>
+  </form>
+</div>
